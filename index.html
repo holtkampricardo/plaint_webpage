@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planit - Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📍</text></svg>">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #1a1a1a;
+        }
+        .bg-brand { background-color: #FF033E; }
+        .text-brand { color: #FF033E; }
+        .border-brand { border-color: #FF033E; }
+        .btn-brand {
+            background-color: #FF033E;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px -5px rgba(255, 3, 62, 0.6);
+        }
+        .btn-brand:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px -5px rgba(255, 3, 62, 0.8);
+        }
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15);
+            border-color: rgba(255, 3, 62, 0.5);
+        }
+        .parallax-container {
+            perspective: 1000px;
+            position: relative;
+            width: 100%;
+            height: 450px;
+        }
+        .parallax-item {
+            position: absolute;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-6 lg:px-8 bg-white/80 backdrop-blur-sm sticky top-0 z-40">
+        <div class="container mx-auto flex justify-between items-center">
+             <h1 class="text-3xl font-bold text-brand">Planit</h1>
+            <a href="#cta" class="btn-brand font-semibold py-2 px-5 rounded-full" data-lang="notify-me">Get Notified</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-white text-center py-24 sm:py-32 lg:py-40 px-4">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content container mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black mb-4 leading-tight" data-lang="hero-title">Organize plans with friends<br class="hidden md:block">in a fun and easy way.</h1>
+            <p class="text-lg sm:text-xl lg:text-2xl text-gray-500 mb-8 max-w-3xl mx-auto" data-lang="hero-subtitle">Coming soon to iOS & Android</p>
+            <a href="#cta" class="btn-brand text-lg font-bold py-4 px-10 rounded-full" data-lang="notify-me-cta">Notify me when it's available</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 sm:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold" data-lang="features-title">What can you do with Planit?</h2>
+                <p class="text-lg text-gray-500 mt-4 max-w-2xl mx-auto" data-lang="features-subtitle">Everything you need to turn ideas into incredible experiences.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white p-8 rounded-2xl text-center">
+                    <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
+                        <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20H5C4.46957 20 3.96086 19.7893 3.58579 19.4142C3.21071 19.0391 3 18.5304 3 18V9L12 2L21 9V18C21 18.5304 20.7893 19.0391 20.4142 19.4142C20.0391 19.7893 19.5304 20 19 20H15M9 20V12H15V20M9 20H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-lang="feature1-title">Create plans and sub-plans</h3>
+                    <p class="text-gray-500" data-lang="feature1-desc">Organize every detail, from the main event to the smallest tasks.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white p-8 rounded-2xl text-center">
+                    <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
+                       <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 9V5C17 4.46957 16.7893 3.96086 16.4142 3.58579C16.0391 3.21071 15.5304 3 15 3H9C8.46957 3 7.96086 3.21071 7.58579 3.58579C7.21071 3.96086 7 4.46957 7 5V9M12 16V12M12 12H10M12 12H14M5 9H19C19.5304 9 20.0391 9.21071 20.4142 9.58579C20.7893 9.96086 21 10.4696 21 11V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V11C3 10.4696 3.21071 9.96086 3.58579 9.58579C3.96086 9.21071 4.46957 9 5 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-lang="feature2-title">Propose & split costs</h3>
+                    <p class="text-gray-500" data-lang="feature2-desc">Suggest activities and manage expenses transparently and fairly.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white p-8 rounded-2xl text-center">
+                    <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
+                        <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 12.5539 3.04018 13.0994 3.11818 13.633M10.5 19.949C10.9912 19.9832 11.4925 20 12 20C13.1492 20 14.2543 19.7842 15.266 19.382" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-lang="feature3-title">Vote on everything</h3>
+                    <p class="text-gray-500" data-lang="feature3-desc">Let the group decide on dates, locations, and activities democratically.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white p-8 rounded-2xl text-center">
+                    <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
+                        <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15H12.01M12 12H12.01M12 9H12.01M7.86 2H16.14L22 7.86V16.14L16.14 22H7.86L2 16.14V7.86L7.86 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-lang="feature4-title">AI Planner Chat</h3>
+                    <p class="text-gray-500" data-lang="feature4-desc">Get smart suggestions and let our AI assistant build the perfect plan.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white p-8 rounded-2xl text-center">
+                    <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
+                        <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8ZM13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-lang="feature5-title">Notifications & Reminders</h3>
+                    <p class="text-gray-500" data-lang="feature5-desc">Stay updated on all plan activities and never miss a deadline.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white p-8 rounded-2xl text-center">
+                    <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
+                        <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21L15.09 16.34L20 15.27L16.5 12.5L17.64 7.66L12.91 10.5L8.36 7.66L9.5 12.5L6 15.27L10.91 16.34L12 21ZM12 3L10.06 9.03L4 10.09L8.5 13.88L7.18 19.82L12 16.5L16.82 19.82L15.5 13.88L20 10.09L13.94 9.03L12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-lang="feature6-title">Gamification</h3>
+                    <p class="text-gray-500" data-lang="feature6-desc">Earn badges and climb the rankings for being the best planner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- App Mockup / Showcase Section -->
+    <section class="py-20 sm:py-32 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" data-lang="showcase-title">We are building something amazing!</h2>
+                    <p class="text-lg text-gray-500" data-lang="showcase-desc">We're working hard to launch Planit very soon on iOS and Android. Take a sneak peek at what's coming. The future of social planning is almost here.</p>
+                </div>
+                <div class="parallax-container" id="parallax-scene">
+                    <!-- UI Elements for Parallax -->
+                    <div class="parallax-item" style="width: 280px; top: 10%; left: 30%; transform: translateZ(20px);">
+                         <div class="p-4">
+                            <h3 class="font-bold">Summer Beach Trip 🌴</h3>
+                            <div class="flex items-center mt-2">
+                                <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">Confirmed</span>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="parallax-item p-4" style="width: 200px; top: 55%; left: 10%; transform: translateZ(60px);">
+                        <p class="font-semibold">Best dates?</p>
+                        <div class="space-y-2 mt-2">
+                           <div class="flex items-center justify-between text-sm"><p>July 15-20</p> <span class="font-bold text-brand">7 votes</span></div>
+                           <div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-brand h-2 rounded-full" style="width: 70%"></div></div>
+                        </div>
+                    </div>
+                    <div class="parallax-item flex items-center p-3" style="width: 180px; top: 15%; left: -5%; transform: translateZ(80px);">
+                        <img src="https://i.pravatar.cc/40?u=a" alt="avatar" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <p class="font-semibold">Alex (You)</p>
+                            <p class="text-xs text-gray-500">Organizer</p>
+                        </div>
+                    </div>
+                    <div class="parallax-item" style="width: 250px; top: 60%; left: 65%; transform: translateZ(40px);">
+                        <div class="bg-brand text-white p-3 font-bold">New Plan</div>
+                        <div class="p-4">
+                            <p class="text-sm font-semibold">Plan Title</p>
+                            <div class="w-full border rounded-lg p-2 mt-1 text-gray-400">e.g., Mountain hike</div>
+                        </div>
+                    </div>
+                     <div class="parallax-item flex items-center p-3" style="width: 150px; top: 25%; left: 80%; transform: translateZ(100px);">
+                        <img src="https://i.pravatar.cc/40?u=b" alt="avatar" class="w-8 h-8 rounded-full -ml-2 border-2 border-white">
+                        <img src="https://i.pravatar.cc/40?u=c" alt="avatar" class="w-8 h-8 rounded-full -ml-2 border-2 border-white">
+                        <img src="https://i.pravatar.cc/40?u=d" alt="avatar" class="w-8 h-8 rounded-full -ml-2 border-2 border-white">
+                        <span class="text-sm ml-2 font-bold">+5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="bg-gray-50">
+        <div class="container mx-auto py-20 sm:py-24 px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-2" data-lang="cta-title">Want to be the first to try it?</h2>
+            <p class="text-gray-500 mb-8" data-lang="cta-subtitle">Join the waiting list and get exclusive early access.</p>
+            <form class="max-w-md mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="your.email@example.com" class="w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/50 transition" required>
+                    <button type="submit" class="btn-brand font-bold py-3 px-8 rounded-full flex-shrink-0" data-lang="cta-button">Join the waitlist</button>
+                </div>
+                <p class="text-xs text-gray-400 mt-4" data-lang="privacy-policy">We will never share your email with third parties.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                <div class="flex items-center space-x-4">
+                    <h3 class="text-xl font-bold text-brand">Planit</h3>
+                    <p class="text-sm text-gray-500">&copy; 2024. All rights reserved.</p>
+                </div>
+                 <div class="flex items-center space-x-6">
+                     <a href="#" class="text-gray-400 hover:text-brand transition">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.012-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 016.345 2.525c.636-.247 1.363-.416 2.427-.465C9.792 2.013 10.146 2 12.315 2zm-1.002 3.705a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zm-2.14 2.402a5.487 5.487 0 1010.974 0 5.487 5.487 0 00-10.974 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <div class="text-sm">
+                        <button id="lang-en" class="font-semibold text-brand disabled:text-gray-400 disabled:font-normal" disabled>EN</button>
+                        <span class="text-gray-300 mx-1">|</span>
+                        <button id="lang-es" class="font-semibold text-gray-400 disabled:text-brand disabled:font-normal">ES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- LANGUAGE SWITCHER ---
+            const translations = {
+                en: {
+                    'notify-me': "Get Notified",
+                    'hero-title': "Organize plans with friends<br class='hidden md:block'>in a fun and easy way.",
+                    'hero-subtitle': "Coming soon to iOS & Android",
+                    'notify-me-cta': "Notify me when it's available",
+                    'features-title': "What can you do with Planit?",
+                    'features-subtitle': "Everything you need to turn ideas into incredible experiences.",
+                    'feature1-title': "Create plans and sub-plans",
+                    'feature1-desc': "Organize every detail, from the main event to the smallest tasks.",
+                    'feature2-title': "Propose & split costs",
+                    'feature2-desc': "Suggest activities and manage expenses transparently and fairly.",
+                    'feature3-title': "Vote on everything",
+                    'feature3-desc': "Let the group decide on dates, locations, and activities democratically.",
+                    'feature4-title': "AI Planner Chat",
+                    'feature4-desc': "Get smart suggestions and let our AI assistant build the perfect plan.",
+                    'feature5-title': "Notifications & Reminders",
+                    'feature5-desc': "Stay updated on all plan activities and never miss a deadline.",
+                    'feature6-title': "Gamification",
+                    'feature6-desc': "Earn badges and climb the rankings for being the best planner.",
+                    'showcase-title': "We are building something amazing!",
+                    'showcase-desc': "We're working hard to launch Planit very soon on iOS and Android. Take a sneak peek at what's coming. The future of social planning is almost here.",
+                    'cta-title': "Want to be the first to try it?",
+                    'cta-subtitle': "Join the waiting list and get exclusive early access.",
+                    'cta-button': "Join the waitlist",
+                    'privacy-policy': "We will never share your email with third parties."
+                },
+                es: {
+                    'notify-me': "Avísame",
+                    'hero-title': "Organiza planes con amigos<br class='hidden md:block'>de forma fácil y divertida.",
+                    'hero-subtitle': "Próximamente en iOS y Android",
+                    'notify-me-cta': "Avísame cuando esté disponible",
+                    'features-title': "¿Qué puedes hacer con Planit?",
+                    'features-subtitle': "Todo lo que necesitas para convertir ideas en experiencias increíbles.",
+                    'feature1-title': "Crea planes y sub-planes",
+                    'feature1-desc': "Organiza cada detalle, desde el evento principal hasta las tareas más pequeñas.",
+                    'feature2-title': "Propón y divide gastos",
+                    'feature2-desc': "Sugiere actividades y gestiona los gastos de forma transparente y justa.",
+                    'feature3-title': "Vota por todo",
+                    'feature3-desc': "Deja que el grupo decida democráticamente fechas, lugares y actividades.",
+                    'feature4-title': "Chat con IA Planificadora",
+                    'feature4-desc': "Obtén sugerencias inteligentes y deja que nuestro asistente de IA cree el plan perfecto.",
+                    'feature5-title': "Notificaciones y recordatorios",
+                    'feature5-desc': "Mantente al día de todas las actividades del plan y no te pierdas ninguna fecha límite.",
+                    'feature6-title': "Gamificación",
+                    'feature6-desc': "Gana insignias y sube en el ranking por ser el mejor planificador.",
+                    'showcase-title': "¡Estamos construyendo algo increíble!",
+                    'showcase-desc': "Estamos trabajando duro para lanzar Planit muy pronto en iOS y Android. Echa un vistazo a lo que está por venir. El futuro de la planificación social está casi aquí.",
+                    'cta-title': "¿Quieres ser el primero en probarlo?",
+                    'cta-subtitle': "Únete a la lista de espera y obtén acceso anticipado exclusivo.",
+                    'cta-button': "Unirme a la lista",
+                    'privacy-policy': "Nunca compartiremos tu email con terceros."
+                }
+            };
+            
+            const langEnBtn = document.getElementById('lang-en');
+            const langEsBtn = document.getElementById('lang-es');
+            let currentLang = localStorage.getItem('planit-lang') || 'en';
+
+            const setLanguage = (lang) => {
+                currentLang = lang;
+                localStorage.setItem('planit-lang', lang);
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    const key = el.getAttribute('data-lang');
+                    if (translations[lang][key]) {
+                        el.innerHTML = translations[lang][key];
+                    }
+                });
+
+                if (lang === 'en') {
+                    langEnBtn.disabled = true;
+                    langEnBtn.classList.remove('text-gray-400');
+                    langEnBtn.classList.add('text-brand');
+                    langEsBtn.disabled = false;
+                    langEsBtn.classList.add('text-gray-400');
+                    langEsBtn.classList.remove('text-brand');
+                } else {
+                    langEsBtn.disabled = true;
+                    langEsBtn.classList.remove('text-gray-400');
+                    langEsBtn.classList.add('text-brand');
+                    langEnBtn.disabled = false;
+                    langEnBtn.classList.add('text-gray-400');
+                    langEnBtn.classList.remove('text-brand');
+                }
+            };
+
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+            langEsBtn.addEventListener('click', () => setLanguage('es'));
+            
+            setLanguage(currentLang);
+
+            // --- 3D PARALLAX EFFECT ---
+            const scene = document.getElementById('parallax-scene');
+            if(scene) {
+                scene.addEventListener('mousemove', (e) => {
+                    const { width, height, left, top } = scene.getBoundingClientRect();
+                    const x = (e.clientX - left) / width - 0.5;
+                    const y = (e.clientY - top) / height - 0.5;
+
+                    const items = scene.querySelectorAll('.parallax-item');
+                    items.forEach(item => {
+                        const z = parseFloat(item.style.transform.match(/translateZ\((.+)px\)/)[1]) || 20;
+                        const dx = x * z * 0.5;
+                        const dy = y * z * 0.4;
+                        item.style.transform = `translateZ(${z}px) rotateY(${-x * 10}deg) rotateX(${y * 10}deg) translate(${dx}px, ${dy}px)`;
+                    });
+                });
+                 scene.addEventListener('mouseleave', () => {
+                    const items = scene.querySelectorAll('.parallax-item');
+                    items.forEach(item => {
+                        const z = parseFloat(item.style.transform.match(/translateZ\((.+)px\)/)[1]) || 20;
+                         item.style.transform = `translateZ(${z}px) rotateY(0deg) rotateX(0deg)`;
+                    });
+                });
+            }
+
+            // --- PARTICLE EFFECT ---
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            const setCanvasSize = () => {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            };
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    this.color = `rgba(255, 3, 62, ${Math.random() * 0.5 + 0.2})`;
+                }
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+            
+            const initParticles = () => {
+                particles = [];
+                const particleCount = window.innerWidth < 768 ? 40 : 80;
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            };
+
+            const animateParticles = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animateParticles);
+            };
+            
+            setCanvasSize();
+            initParticles();
+            animateParticles();
+            
+            window.addEventListener('resize', () => {
+                setCanvasSize();
+                initParticles();
+            });
+        });
+    </script>
+
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
