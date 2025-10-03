@@ -334,17 +334,21 @@
                 </div>
                  <div class="flex items-center space-x-6">
                     <a href="https://www.instagram.com/getplanit/" target="_blank" 
-                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-pink-500 text-white hover:bg-pink-600 transition">
-                    <!-- Icono de Instagram -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
-                        <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.25 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
-                    </svg>
-                    Instagram
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white transition"
+                        style="background-color: #FF033E;"
+                        onmouseover="this.style.backgroundColor='#e6003b'"
+                        onmouseout="this.style.backgroundColor='#FF033E'">
+                        <!-- Icono de Instagram -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+                            <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm9.25 1.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                        </svg>
+                        Instagram
                     </a>                 
                     <div class="text-sm">
-                        <button id="lang-en" class="font-semibold text-brand disabled:text-gray-400 disabled:font-normal" disabled>EN</button>
-                        <span class="text-gray-300 mx-1">|</span>
-                        <button id="lang-es" class="font-semibold text-gray-400 disabled:text-brand disabled:font-normal">ES</button>
+                        <select id="language-switcher" class="font-semibold text-gray-700 border rounded p-1">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -412,13 +416,14 @@
                 }
             };
             
-            const langEnBtn = document.getElementById('lang-en');
-            const langEsBtn = document.getElementById('lang-es');
+            const languageSwitcher = document.getElementById('language-switcher');
             let currentLang = localStorage.getItem('planit-lang') || 'en';
 
+            // Función para cambiar idioma y actualizar textos
             const setLanguage = (lang) => {
                 currentLang = lang;
                 localStorage.setItem('planit-lang', lang);
+
                 document.querySelectorAll('[data-lang]').forEach(el => {
                     const key = el.getAttribute('data-lang');
                     if (translations[lang][key]) {
@@ -426,26 +431,16 @@
                     }
                 });
 
-                if (lang === 'en') {
-                    langEnBtn.disabled = true;
-                    langEnBtn.classList.remove('text-gray-400');
-                    langEnBtn.classList.add('text-brand');
-                    langEsBtn.disabled = false;
-                    langEsBtn.classList.add('text-gray-400');
-                    langEsBtn.classList.remove('text-brand');
-                } else {
-                    langEsBtn.disabled = true;
-                    langEsBtn.classList.remove('text-gray-400');
-                    langEsBtn.classList.add('text-brand');
-                    langEnBtn.disabled = false;
-                    langEnBtn.classList.add('text-gray-400');
-                    langEnBtn.classList.remove('text-brand');
-                }
+                // Actualiza el valor del desplegable para reflejar el idioma actual
+                languageSwitcher.value = lang;
             };
 
-            langEnBtn.addEventListener('click', () => setLanguage('en'));
-            langEsBtn.addEventListener('click', () => setLanguage('es'));
-            
+            // Evento al cambiar el valor del select
+            languageSwitcher.addEventListener('change', (e) => {
+                setLanguage(e.target.value);
+            });
+
+            // Inicializar al cargar la página
             setLanguage(currentLang);
 
             // --- 3D PARALLAX EFFECT ---
