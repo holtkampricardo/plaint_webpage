@@ -269,17 +269,60 @@
     <!-- CTA Section -->
     <section id="cta" class="bg-gray-50">
         <div class="container mx-auto py-20 sm:py-24 px-4 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold mb-2" data-lang="cta-title">Want to be the first to try it?</h2>
-            <p class="text-gray-500 mb-8" data-lang="cta-subtitle">Join the waiting list and get exclusive early access.</p>
-            <form class="max-w-md mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-2" data-lang="cta-title">
+                Want to be the first to try it?
+            </h2>
+            <p class="text-gray-500 mb-8" data-lang="cta-subtitle">
+                Join the waiting list and get exclusive early access.
+            </p>
+        
+            <!-- Formspree form -->
+            <form
+                action="https://formspree.io/f/xvgwrynw"
+                method="POST"
+                class="max-w-md mx-auto"
+            >
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="your.email@example.com" class="w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/50 transition" required>
-                    <button type="submit" class="btn-brand font-bold py-3 px-8 rounded-full flex-shrink-0" data-lang="cta-button">Join the waitlist</button>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    class="w-full px-5 py-3 rounded-full border-2 border-gray-200 
+                        focus:border-brand focus:outline-none focus:ring-2 
+                        focus:ring-brand/50 transition"
+                    required
+                />
+                <button
+                    type="submit"
+                    class="btn-brand font-bold py-3 px-8 rounded-full flex-shrink-0"
+                    data-lang="cta-button"
+                >
+                    Join the waitlist
+                </button>
                 </div>
-                <p class="text-xs text-gray-400 mt-4" data-lang="privacy-policy">We will never share your email with third parties.</p>
+        
+                <!-- Checkbox Términos -->
+                <div class="mt-4 flex items-center justify-center text-sm text-gray-600">
+                <input
+                    type="checkbox"
+                    id="terms"
+                    name="terms"
+                    required
+                    class="mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand"
+                />
+                <label for="terms" class="cursor-pointer">
+                    <span data-lang="terms-text">
+                    I agree to the <a href="terms.html" class="underline text-brand">Terms & Conditions</a>
+                    </span>
+                </label>
+                </div>
+        
+                <p class="text-xs text-gray-400 mt-4" data-lang="privacy-policy">
+                We will never share your email with third parties.
+                </p>
             </form>
         </div>
-    </section>
+    </section>  
 
     <!-- Footer -->
     <footer class="bg-white">
@@ -337,7 +380,8 @@
                     'cta-title': "Want to be the first to try it?",
                     'cta-subtitle': "Join the waiting list and get exclusive early access.",
                     'cta-button': "Join the waitlist",
-                    'privacy-policy': "We will never share your email with third parties."
+                    'privacy-policy': "We will never share your email with third parties.",
+                    'terms-text': 'I agree to the <a href="terms.html" target="_blank" class="underline text-brand">Terms & Conditions</a>'
                 },
                 es: {
                     'notify-me': "Avísame",
@@ -363,7 +407,8 @@
                     'cta-title': "¿Quieres ser el primero en probarlo?",
                     'cta-subtitle': "Únete a la lista de espera y obtén acceso anticipado exclusivo.",
                     'cta-button': "Unirme a la lista",
-                    'privacy-policy': "Nunca compartiremos tu email con terceros."
+                    'privacy-policy': "Nunca compartiremos tu email con terceros.",
+                    'terms-text': 'Acepto los <a href="terms.html" class="underline text-brand">Términos y Condiciones</a>'
                 }
             };
             

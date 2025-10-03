@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Privacy – Planit</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    a { color: #FF033E; }
+    .lang-switch { cursor: pointer; font-weight: 600; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow py-4">
+    <div class="container mx-auto flex justify-between items-center px-6">
+      <h1 class="text-xl font-bold">Planit</h1>
+      <div>
+        <span class="lang-switch" id="lang-en">EN</span> | 
+        <span class="lang-switch" id="lang-es">ES</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="container mx-auto max-w-4xl py-12 px-6">
+    
+    <h2 class="text-3xl font-bold mb-6" id="terms-title">Terms & Conditions</h2>
+    
+    <p class="mb-4" id="terms-text">
+      By using Planit, you agree to comply with these Terms & Conditions. You acknowledge that Planit is a planning application and that your participation in the waitlist or app does not create a financial or legal relationship. All information provided must be accurate.
+    </p>
+
+    <h2 class="text-3xl font-bold mt-10 mb-6" id="privacy-title">Privacy Policy</h2>
+    
+    <p class="mb-4" id="privacy-text">
+      We value your privacy. We collect your email only to send updates and early access notifications. Your information will never be shared with third parties. You can request deletion of your data at any time by contacting <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="cookies-title">Cookies & Tracking</h2>
+    <p class="mb-4" id="cookies-text">
+      Planit may use cookies to enhance user experience, analyze traffic, and personalize content. You can manage cookie preferences in your browser settings.
+    </p>
+
+    <h2 class="text-2xl font-bold mt-10 mb-4" id="changes-title">Changes to Terms</h2>
+    <p class="mb-4" id="changes-text">
+      We may update these Terms & Privacy Policy periodically. Updates will be posted on this page, and continued use of Planit constitutes acceptance of any changes.
+    </p>
+
+    <p class="mt-10 text-sm text-gray-500">&copy; 2025 Planit. All rights reserved.</p>
+  </main>
+
+  <script>
+    const translations = {
+      en: {
+        'terms-title': "Terms & Conditions",
+        'terms-text': "By using Planit, you agree to comply with these Terms & Conditions. You acknowledge that Planit is a planning application and that your participation in the waitlist or app does not create a financial or legal relationship. All information provided must be accurate.",
+        'privacy-title': "Privacy Policy",
+        'privacy-text': "We value your privacy. We collect your email only to send updates and early access notifications. Your information will never be shared with third parties. You can request deletion of your data at any time by contacting aplicacionplanit@gmail.com.",
+        'cookies-title': "Cookies & Tracking",
+        'cookies-text': "Planit may use cookies to enhance user experience, analyze traffic, and personalize content. You can manage cookie preferences in your browser settings.",
+        'changes-title': "Changes to Terms",
+        'changes-text': "We may update these Terms & Privacy Policy periodically. Updates will be posted on this page, and continued use of Planit constitutes acceptance of any changes."
+      },
+      es: {
+        'terms-title': "Términos y Condiciones",
+        'terms-text': "Al usar Planit, aceptas cumplir con estos Términos y Condiciones. Reconoces que Planit es una aplicación de planificación y que tu participación en la lista de espera o la app no crea una relación financiera o legal. Toda la información proporcionada debe ser precisa.",
+        'privacy-title': "Política de Privacidad",
+        'privacy-text': "Valoramos tu privacidad. Recopilamos tu correo electrónico solo para enviar actualizaciones y notificaciones de acceso anticipado. Tu información nunca se compartirá con terceros. Puedes solicitar la eliminación de tus datos en cualquier momento contactando a aplicacionplanit@gmail.com.",
+        'cookies-title': "Cookies y Seguimiento",
+        'cookies-text': "Planit puede usar cookies para mejorar la experiencia del usuario, analizar el tráfico y personalizar el contenido. Puedes gestionar las preferencias de cookies en la configuración de tu navegador.",
+        'changes-title': "Cambios en los Términos",
+        'changes-text': "Podemos actualizar estos Términos y Política de Privacidad periódicamente. Las actualizaciones se publicarán en esta página y el uso continuo de Planit constituye la aceptación de los cambios."
+      }
+    };
+
+    let currentLang = localStorage.getItem('planit-lang') || 'en';
+
+    const setLang = (lang) => {
+      currentLang = lang;
+      localStorage.setItem('planit-lang', lang);
+      Object.keys(translations[lang]).forEach(id => {
+        document.getElementById(id).innerText = translations[lang][id];
+      });
+    };
+
+    document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
+    document.getElementById('lang-es').addEventListener('click', () => setLang('es'));
+
+    setLang(currentLang);
+  </script>
+
+</body>
+</html>
