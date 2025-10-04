@@ -26,53 +26,50 @@
 
   <!-- Main content -->
   <main class="container mx-auto max-w-4xl py-12 px-6">
-    
-    <h2 class="text-3xl font-bold mb-6" id="terms-title">Terms & Conditions</h2>
-    
-    <p class="mb-4" id="terms-text">
-      By using Planit, you agree to comply with these Terms & Conditions. You acknowledge that Planit is a planning application and that your participation in the waitlist or app does not create a financial or legal relationship. All information provided must be accurate.
-    </p>
 
-    <h2 class="text-3xl font-bold mt-10 mb-6" id="privacy-title">Privacy Policy</h2>
-    
-    <p class="mb-4" id="privacy-text">
-      We value your privacy. We collect your email only to send updates and early access notifications. Your information will never be shared with third parties. You can request deletion of your data at any time by contacting <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.
-    </p>
+    <!-- Form with checkboxes -->
+    <form id="notify-form" class="bg-white p-6 rounded shadow">
+      <label class="flex items-center mb-4">
+        <input type="checkbox" id="accept-terms" class="mr-2">
+        <span id="terms-text">I agree to the <a href="#" id="show-terms" class="underline text-brand">Terms & Conditions</a> and <a href="#" id="show-privacy" class="underline text-brand">Privacy Policy</a></span>
+      </label>
+      <label class="flex items-center mb-4">
+        <input type="checkbox" id="accept-marketing" class="mr-2">
+        <span id="marketing-text">I agree to receive promotional emails.</span>
+      </label>
+      <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Notify Me</button>
+    </form>
 
-    <h2 class="text-2xl font-bold mt-10 mb-4" id="cookies-title">Cookies & Tracking</h2>
-    <p class="mb-4" id="cookies-text">
-      Planit may use cookies to enhance user experience, analyze traffic, and personalize content. You can manage cookie preferences in your browser settings.
-    </p>
-
-    <h2 class="text-2xl font-bold mt-10 mb-4" id="changes-title">Changes to Terms</h2>
-    <p class="mb-4" id="changes-text">
-      We may update these Terms & Privacy Policy periodically. Updates will be posted on this page, and continued use of Planit constitutes acceptance of any changes.
-    </p>
-
-    <p class="mt-10 text-sm text-gray-500">&copy; 2025 Planit. All rights reserved.</p>
   </main>
+
+  <!-- Modal Background -->
+  <div id="modal-bg" class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50">
+    <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-2/3 p-6 relative">
+      <h3 class="text-xl font-bold mb-4" id="modal-title"></h3>
+      <p class="mb-4" id="modal-content"></p>
+      <button id="close-modal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800">&times;</button>
+    </div>
+  </div>
 
   <script>
     const translations = {
       en: {
-        'terms-title': "Terms & Conditions",
-        'terms-text': "By using Planit, you agree to comply with these Terms & Conditions. You acknowledge that Planit is a planning application and that your participation in the waitlist or app does not create a financial or legal relationship. All information provided must be accurate.",
-        'privacy-title': "Privacy Policy",
-        'privacy-text': "We value your privacy. We collect your email only to send updates and early access notifications. Your information will never be shared with third parties. You can request deletion of your data at any time by contacting aplicacionplanit@gmail.com.",
-        'cookies-title': "Cookies & Tracking",
-        'cookies-text': "Planit may use cookies to enhance user experience, analyze traffic, and personalize content. You can manage cookie preferences in your browser settings.",
-        'changes-title': "Changes to Terms",
-        'changes-text': "We may update these Terms & Privacy Policy periodically. Updates will be posted on this page, and continued use of Planit constitutes acceptance of any changes."
+        'terms-text': 'I agree to the <a href="#" id="show-terms" class="underline text-brand">Terms & Conditions</a> and <a href="#" id="show-privacy" class="underline text-brand">Privacy Policy</a>',
+        'marketing-text': 'I agree to receive promotional emails and offers from Planit.',
+        'terms-title': 'Terms & Conditions',
+        'terms-content': 'By using Planit, you agree to comply with these Terms & Conditions. You acknowledge that Planit is a planning application and that your participation does not create a financial or legal relationship. All information provided must be accurate.',
+        'privacy-title': 'Privacy Policy',
+        'privacy-content': 'We value your privacy. We collect your email only to send updates and early access notifications. Your information will never be shared with third parties. You can request deletion of your data at any time by contacting aplicacionplanit@gmail.com.',
+        'error-checkbox': 'You must accept Terms & Privacy before submitting.'
       },
       es: {
-        'terms-title': "Términos y Condiciones",
-        'terms-text': "Al usar Planit, aceptas cumplir con estos Términos y Condiciones. Reconoces que Planit es una aplicación de planificación y que tu participación en la lista de espera o la app no crea una relación financiera o legal. Toda la información proporcionada debe ser precisa.",
-        'privacy-title': "Política de Privacidad",
-        'privacy-text': "Valoramos tu privacidad. Recopilamos tu correo electrónico solo para enviar actualizaciones y notificaciones de acceso anticipado. Tu información nunca se compartirá con terceros. Puedes solicitar la eliminación de tus datos en cualquier momento contactando a aplicacionplanit@gmail.com.",
-        'cookies-title': "Cookies y Seguimiento",
-        'cookies-text': "Planit puede usar cookies para mejorar la experiencia del usuario, analizar el tráfico y personalizar el contenido. Puedes gestionar las preferencias de cookies en la configuración de tu navegador.",
-        'changes-title': "Cambios en los Términos",
-        'changes-text': "Podemos actualizar estos Términos y Política de Privacidad periódicamente. Las actualizaciones se publicarán en esta página y el uso continuo de Planit constituye la aceptación de los cambios."
+        'terms-text': 'Acepto los <a href="#" id="show-terms" class="underline text-brand">Términos y Condiciones</a> y la <a href="#" id="show-privacy" class="underline text-brand">Política de Privacidad</a>',
+        'marketing-text': 'Acepto recibir correos promocionales y ofertas de Planit.',
+        'terms-title': 'Términos y Condiciones',
+        'terms-content': 'Al usar Planit, aceptas cumplir estos Términos y Condiciones. Reconoces que Planit es una aplicación de planificación y que tu participación no crea una relación financiera o legal. Toda la información proporcionada debe ser precisa.',
+        'privacy-title': 'Política de Privacidad',
+        'privacy-content': 'Valoramos tu privacidad. Recopilamos tu correo electrónico solo para enviar actualizaciones y notificaciones de acceso anticipado. Tu información nunca se compartirá con terceros. Puedes solicitar la eliminación de tus datos en cualquier momento contactando a aplicacionplanit@gmail.com.',
+        'error-checkbox': 'Debes aceptar los Términos y la Privacidad antes de enviar.'
       }
     };
 
@@ -81,15 +78,47 @@
     const setLang = (lang) => {
       currentLang = lang;
       localStorage.setItem('planit-lang', lang);
-      Object.keys(translations[lang]).forEach(id => {
-        document.getElementById(id).innerText = translations[lang][id];
-      });
+      document.getElementById('terms-text').innerHTML = translations[lang]['terms-text'];
+      document.getElementById('marketing-text').innerText = translations[lang]['marketing-text'];
     };
 
     document.getElementById('lang-en').addEventListener('click', () => setLang('en'));
     document.getElementById('lang-es').addEventListener('click', () => setLang('es'));
-
     setLang(currentLang);
+
+    // Modal logic
+    const modalBg = document.getElementById('modal-bg');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+    const closeModal = document.getElementById('close-modal');
+
+    const openModal = (title, content) => {
+      modalTitle.innerText = title;
+      modalContent.innerText = content;
+      modalBg.classList.remove('hidden');
+    };
+
+    closeModal.addEventListener('click', () => modalBg.classList.add('hidden'));
+    modalBg.addEventListener('click', (e) => { if(e.target === modalBg) modalBg.classList.add('hidden'); });
+
+    document.addEventListener('click', (e) => {
+      if(e.target.id === 'show-terms') {
+        e.preventDefault();
+        openModal(translations[currentLang]['terms-title'], translations[currentLang]['terms-content']);
+      }
+      if(e.target.id === 'show-privacy') {
+        e.preventDefault();
+        openModal(translations[currentLang]['privacy-title'], translations[currentLang]['privacy-content']);
+      }
+    });
+
+    // Form validation
+    document.getElementById('notify-form').addEventListener('submit', (e) => {
+      if(!document.getElementById('accept-terms').checked) {
+        e.preventDefault();
+        alert(translations[currentLang]['error-checkbox']);
+      }
+    });
   </script>
 
 </body>
