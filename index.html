@@ -52,7 +52,9 @@
         .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(0,0,0,0.15); border-color: rgba(255, 3, 62, 0.5); }
         .parallax-container { perspective: 1000px; position: relative; width: 100%; height: 450px; }
         .parallax-item { position: absolute; border-radius: 12px; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94); overflow: hidden; border: 1px solid #e5e7eb; }
-        .modal-link { cursor: pointer; }
+        .modal-link { cursor: pointer; text-decoration: underline; }
+        .modal-link:hover { color: #FF033E; }
+        #cookie-banner { box-shadow: 0 -4px 24px rgba(0,0,0,0.08); }
     </style>
     <!-- ===== Structured data: MobileApplication + Organization (helps Google show logo & app info) ===== -->
     <script type="application/ld+json">
@@ -114,11 +116,11 @@
             <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold" data-lang="features-title">What can you do with Planit?</h2>
             <p class="text-lg text-gray-500 mt-4 max-w-2xl mx-auto" data-lang="features-subtitle">Everything you need to turn ideas into incredible experiences.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <!-- Feature 1 -->
             <div class="feature-card bg-white p-8 rounded-2xl text-center">
                 <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 20H5C4.46957 20 3.96086 19.7893 3.58579 19.4142C3.21071 19.0391 3 18.5304 3 18V9L12 2L21 9V18C21 18.5304 20.7893 19.0391 20.4142 19.4142C20.0391 19.7893 19.5304 20 19 20H15M9 20V12H15V20M9 20H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>
                 </div>
                 <h3 class="text-xl font-bold mb-2" data-lang="feature1-title">Create plans and sub-plans</h3>
                 <p class="text-gray-500" data-lang="feature1-desc">Organize every detail, from the main event to the smallest tasks.</p>
@@ -126,7 +128,7 @@
             <!-- Feature 2 -->
             <div class="feature-card bg-white p-8 rounded-2xl text-center">
                 <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 9V5C17 4.46957 16.7893 3.96086 16.4142 3.58579C16.0391 3.21071 15.5304 3 15 3H9C8.46957 3 7.96086 3.21071 7.58579 3.58579C7.21071 3.96086 7 4.46957 7 5V9M12 16V12M12 12H10M12 12H14M5 9H19C19.5304 9 20.0391 9.21071 20.4142 9.58579C20.7893 9.96086 21 10.4696 21 11V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V11C3 10.4696 3.21071 9.96086 3.58579 9.58579C3.96086 9.21071 4.46957 9 5 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
                 </div>
                 <h3 class="text-xl font-bold mb-2" data-lang="feature2-title">Propose & split costs</h3>
                 <p class="text-gray-500" data-lang="feature2-desc">Suggest activities and manage expenses transparently and fairly.</p>
@@ -134,7 +136,7 @@
             <!-- Feature 3 -->
             <div class="feature-card bg-white p-8 rounded-2xl text-center">
                 <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12L11 14L15 10M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 12.5539 3.04018 13.0994 3.11818 13.633M10.5 19.949C10.9912 19.9832 11.4925 20 12 20C13.1492 20 14.2543 19.7842 15.266 19.382" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
                 </div>
                 <h3 class="text-xl font-bold mb-2" data-lang="feature3-title">Vote on everything</h3>
                 <p class="text-gray-500" data-lang="feature3-desc">Let the group decide on dates, locations, and activities democratically.</p>
@@ -142,26 +144,10 @@
             <!-- Feature 4 -->
             <div class="feature-card bg-white p-8 rounded-2xl text-center">
                 <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 15H12.01M12 12H12.01M12 9H12.01M7.86 2H16.14L22 7.86V16.14L16.14 22H7.86L2 16.14V7.86L7.86 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
                 </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature4-title">AI Planner Chat</h3>
-                <p class="text-gray-500" data-lang="feature4-desc">Get smart suggestions and let our AI assistant build the perfect plan.</p>
-            </div>
-            <!-- Feature 5 -->
-            <div class="feature-card bg-white p-8 rounded-2xl text-center">
-                <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8ZM13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature5-title">Notifications & Reminders</h3>
-                <p class="text-gray-500" data-lang="feature5-desc">Stay updated on all plan activities and never miss a deadline.</p>
-            </div>
-            <!-- Feature 6 -->
-            <div class="feature-card bg-white p-8 rounded-2xl text-center">
-                <div class="mb-4 inline-block p-4 bg-red-50 rounded-xl">
-                    <svg class="h-8 w-8 text-brand" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21L15.09 16.34L20 15.27L16.5 12.5L17.64 7.66L12.91 10.5L8.36 7.66L9.5 12.5L6 15.27L10.91 16.34L12 21ZM12 3L10.06 9.03L4 10.09L8.5 13.88L7.18 19.82L12 16.5L16.82 19.82L15.5 13.88L20 10.09L13.94 9.03L12 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2" data-lang="feature6-title">Gamification</h3>
-                <p class="text-gray-500" data-lang="feature6-desc">Earn badges and climb the rankings for being the best planner.</p>
+                <h3 class="text-xl font-bold mb-2" data-lang="feature4-title">Notifications & Reminders</h3>
+                <p class="text-gray-500" data-lang="feature4-desc">Stay updated on all plan activities and never miss a deadline.</p>
             </div>
         </div>
     </div>
@@ -221,54 +207,65 @@
 <section id="cta" class="bg-gray-50">
     <div class="container mx-auto py-20 sm:py-24 px-4 text-center">
         <h2 class="text-3xl sm:text-4xl font-bold mb-2" data-lang="cta-title">Want to be the first to try it?</h2>
-        <p class="text-gray-500 mb-8" data-lang="cta-subtitle">Join the waiting list and get exclusive early access.</p>
-        <form action="https://formspree.io/f/xvgwrynw" method="POST" class="max-w-md mx-auto">
+        <p class="text-gray-500 mb-8" data-lang="cta-subtitle">Join the waiting list to be notified when Planit launches.</p>
+        <form id="waitlist-form" action="https://formspree.io/f/xvgwrynw" method="POST" class="max-w-lg mx-auto">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+            <input type="hidden" name="terms_version" value="2026-05">
+            <input type="hidden" name="privacy_accepted" id="privacy-accepted-field" value="no">
+            <input type="hidden" name="marketing_consent" id="marketing-consent-field" value="no">
+            <input type="hidden" name="consent_language" id="consent-language-field" value="en">
             <div class="flex flex-col sm:flex-row gap-4">
-                <input type="email" name="email" placeholder="your.email@example.com" class="w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/50 transition" required />
+                <input type="email" name="email" id="waitlist-email" placeholder="your.email@example.com" autocomplete="email" class="w-full px-5 py-3 rounded-full border-2 border-gray-200 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/50 transition" required />
                 <button type="submit" class="btn-brand font-bold py-3 px-8 rounded-full flex-shrink-0" data-lang="cta-button">Join the waitlist</button>
             </div>
-            <div class="mt-4 flex items-center justify-center text-sm text-gray-600">
-                <input type="checkbox" id="terms" name="terms" required class="mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand" />
+            <div class="mt-4 flex items-start justify-center text-sm text-gray-600 text-left max-w-lg mx-auto">
+                <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand flex-shrink-0" />
                 <label for="terms" class="cursor-pointer">
-                    <span data-lang="terms-text">
-                        I agree to the 
-                        <span class="modal-link" data-type="terms">Terms & Conditions</span> 
-                        and the 
-                        <span class="modal-link" data-type="privacy">Privacy Policy</span>
-                    </span>
+                    <span data-lang="terms-text">I confirm I am at least 16 years old and I have read and accept the <span class="modal-link" data-type="terms">Terms & Conditions</span>, the <span class="modal-link" data-type="privacy">Privacy Policy</span> and the <span class="modal-link" data-type="legal">Legal Notice</span>.</span>
                 </label>
             </div>
-            <div class="mt-2 flex items-center justify-center text-sm text-gray-600">
-                <input type="checkbox" id="marketing" name="marketing" value="yes" class="mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand" />
+            <div class="mt-3 flex items-start justify-center text-sm text-gray-600 text-left max-w-lg mx-auto">
+                <input type="checkbox" id="marketing" class="mt-1 mr-2 w-4 h-4 text-brand border-gray-300 rounded focus:ring-brand flex-shrink-0" />
                 <label for="marketing" class="cursor-pointer">
-                    <span data-lang="marketing-text">I agree to receive promotional emails and offers from Planit.</span>
+                    <span data-lang="marketing-text">I agree to receive promotional emails and offers from Planit (optional). I can unsubscribe at any time.</span>
                 </label>
             </div>
-            <p class="text-xs text-gray-400 mt-4" data-lang="privacy-policy">We will never share your email with third parties.</p>
+            <p class="text-xs text-gray-400 mt-4 max-w-lg mx-auto leading-relaxed" data-lang="privacy-policy">Your email is used only to manage the waitlist. Submissions are processed by <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand">Formspree</a>, our form provider. We do not sell your data. See our <span class="modal-link" data-type="privacy">Privacy Policy</span>.</p>
+            <p class="text-xs text-gray-400 mt-2 max-w-lg mx-auto leading-relaxed" data-lang="disclaimer-short">Planit is in development. Joining the waitlist does not guarantee access, launch date, or availability in your region.</p>
         </form>
     </div>
 </section>
 
 <!-- Footer -->
-<footer class="bg-white">
+<footer class="bg-white border-t border-gray-100">
     <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center gap-4 mb-6 text-center">
+            <nav class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-sm text-gray-600" aria-label="Legal">
+                <button type="button" class="modal-link hover:text-brand" data-type="terms" data-lang="footer-terms">Terms</button>
+                <span class="text-gray-300" aria-hidden="true">·</span>
+                <button type="button" class="modal-link hover:text-brand" data-type="privacy" data-lang="footer-privacy">Privacy</button>
+                <span class="text-gray-300" aria-hidden="true">·</span>
+                <button type="button" class="modal-link hover:text-brand" data-type="legal" data-lang="footer-legal">Legal Notice</button>
+                <span class="text-gray-300" aria-hidden="true">·</span>
+                <button type="button" class="modal-link hover:text-brand" data-type="cookies" data-lang="footer-cookies">Cookies</button>
+                <span class="text-gray-300" aria-hidden="true">·</span>
+                <a href="mailto:aplicacionplanit@gmail.com" class="hover:text-brand" data-lang="footer-contact">Contact</a>
+            </nav>
+            <p class="text-xs text-gray-400 max-w-2xl leading-relaxed" data-lang="footer-disclaimer">Planit is a project in development. Content on this site is for information only and does not constitute a contract or offer.</p>
+        </div>
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div class="flex items-center space-x-4">
                 <img src="./assets/logo.png" alt="Planit Logo" class="h-6">
-                <p class="text-sm text-gray-500">&copy; 2025. All rights reserved.</p>
+                <p class="text-sm text-gray-500">&copy; 2026 Planit. <span data-lang="footer-rights">All rights reserved.</span></p>
             </div>
             <div class="flex items-center space-x-6">
-                <a href="https://www.instagram.com/getplanit/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white transition"
-                style="background-color: #FF033E;"
-                onmouseover="this.style.backgroundColor='#e6003b'"
-                onmouseout="this.style.backgroundColor='#FF033E'">
-                    <!-- Icono de Instagram SVG limpio -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" class="w-5 h-5">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.337 3.608 1.312.975.975 1.25 2.242 1.312 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.337 2.633-1.312 3.608-.975.975-2.242 1.25-3.608 1.312-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.337-3.608-1.312-.975-.975-1.25-2.242-1.312-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.337-2.633 1.312-3.608.975-.975 2.242-1.25 3.608-1.312C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.771.13 4.623.43 3.677 1.377 2.73 2.323 2.43 3.471 2.372 4.752.014 8.332 0 8.741 0 12s.014 3.668.072 4.948c.058 1.281.358 2.429 1.305 3.376.947.947 2.095 1.247 3.376 1.305C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.281-.058 2.429-.358 3.376-1.305.947-.947 1.247-2.095 1.305-3.376.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.058-1.281-.358-2.429-1.305-3.376C19.377.43 18.229.13 16.948.072 15.668.014 15.259 0 12 0z"/>
-                        <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
-                        <circle cx="18.406" cy="5.594" r="1.44"/>
+                <a href="https://www.instagram.com/getplanit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @getplanit" class="inline-flex items-center gap-2 text-gray-600 hover:text-brand transition-colors font-medium">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="2" width="20" height="20" rx="5"/>
+                        <circle cx="12" cy="12" r="4"/>
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
                     </svg>
-                    <span>Instagram</span>
+                    <span>@getplanit</span>
                 </a>
 
                 <div class="text-sm">
@@ -283,14 +280,25 @@
 </footer>
 
 <!-- Modal Terms & Privacy -->
-<div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white rounded-xl max-w-xl w-full p-6 relative">
-        <button id="modal-close" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl">&times;</button>
-        <h2 id="modal-title" class="text-xl font-bold mb-4"></h2>
-        <div id="modal-content" class="text-gray-700 max-h-96 overflow-y-auto"></div>
+<div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+    <div class="bg-white rounded-xl max-w-2xl w-full p-6 relative max-h-[90vh] flex flex-col">
+        <button id="modal-close" type="button" class="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl" aria-label="Close">&times;</button>
+        <h2 id="modal-title" class="text-xl font-bold mb-4 pr-8"></h2>
+        <div id="modal-content" class="text-gray-700 text-sm leading-relaxed overflow-y-auto flex-1"></div>
     </div>
 </div>
 
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 hidden">
+    <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-gray-600 text-center sm:text-left" data-lang="cookie-text">We use essential storage (language preference) and third-party services (Formspree, fonts). See our <span class="modal-link" data-type="cookies">Cookie Policy</span>.</p>
+        <div class="flex gap-3 flex-shrink-0">
+            <button type="button" id="cookie-reject" class="px-4 py-2 text-sm font-semibold text-gray-600 border border-gray-300 rounded-full hover:bg-gray-50" data-lang="cookie-reject">Reject non-essential</button>
+            <button type="button" id="cookie-accept" class="px-4 py-2 text-sm font-semibold text-white rounded-full btn-brand" data-lang="cookie-accept">Accept</button>
+        </div>
+    </div>
+</div>
+
+<script src="/legal.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -302,19 +310,32 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-subtitle': "Coming soon to iOS & Android",
             'notify-me-cta': "Notify me when it's available",
             'cta-title': "Want to be the first to try it?",
-            'cta-subtitle': "Join the waiting list and get exclusive early access.",
+            'cta-subtitle': "Join the waiting list to be notified when Planit launches.",
             'cta-button': "Join the waitlist",
-            'privacy-policy': "We will never share your email with third parties.",
-            'terms-text': 'I agree to the <span class="modal-link" data-type="terms">Terms & Conditions</span> and the <span class="modal-link" data-type="privacy">Privacy Policy</span>',
-            'marketing-text': "I agree to receive promotional emails and offers from Planit.",
+            'privacy-policy': 'Your email is used only to manage the waitlist. Submissions are processed by <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand">Formspree</a>, our form provider. We do not sell your data. See our <span class="modal-link" data-type="privacy">Privacy Policy</span>.',
+            'terms-text': 'I confirm I am at least 16 years old and I have read and accept the <span class="modal-link" data-type="terms">Terms & Conditions</span>, the <span class="modal-link" data-type="privacy">Privacy Policy</span> and the <span class="modal-link" data-type="legal">Legal Notice</span>.',
+            'marketing-text': 'I agree to receive promotional emails and offers from Planit (optional). I can unsubscribe at any time.',
+            'disclaimer-short': 'Planit is in development. Joining the waitlist does not guarantee access, launch date, or availability in your region.',
+            'footer-terms': 'Terms',
+            'footer-privacy': 'Privacy',
+            'footer-legal': 'Legal Notice',
+            'footer-cookies': 'Cookies',
+            'footer-contact': 'Contact',
+            'footer-disclaimer': 'Planit is a project in development. Content on this site is for information only and does not constitute a contract or offer.',
+            'footer-rights': 'All rights reserved.',
+            'cookie-text': 'We use essential storage (language preference) and third-party services (Formspree, fonts). See our <span class="modal-link" data-type="cookies">Cookie Policy</span>.',
+            'cookie-reject': 'Reject non-essential',
+            'cookie-accept': 'Accept',
             'features-title': "What can you do with Planit?",
             'features-subtitle': "Everything you need to turn ideas into incredible experiences.",
-            'feature1-title': "Create Plans",
-            'feature1-desc': "Quickly create events and plans with your friends in seconds.",
-            'feature2-title': "Vote on Activities",
-            'feature2-desc': "Let friends vote on activities to decide what to do together.",
-            'feature3-title': "Split Costs",
-            'feature3-desc': "Easily divide costs among participants without confusion.",
+            'feature1-title': "Create plans and sub-plans",
+            'feature1-desc': "Organize every detail, from the main event to the smallest tasks.",
+            'feature2-title': "Propose & split costs",
+            'feature2-desc': "Suggest activities and manage expenses transparently and fairly.",
+            'feature3-title': "Vote on everything",
+            'feature3-desc': "Let the group decide on dates, locations, and activities democratically.",
+            'feature4-title': "Notifications & Reminders",
+            'feature4-desc': "Stay updated on all plan activities and never miss a deadline.",
             'showcase-title': "We are building something amazing!",
             'showcase-desc': "We're working hard to launch Planit very soon on iOS and Android. Take a sneak peek at what's coming. The future of social planning is almost here."
         },
@@ -324,19 +345,32 @@ document.addEventListener('DOMContentLoaded', () => {
             'hero-subtitle': "Próximamente en iOS y Android",
             'notify-me-cta': "Avísame cuando esté disponible",
             'cta-title': "¿Quieres ser el primero en probarlo?",
-            'cta-subtitle': "Únete a la lista de espera y obtén acceso anticipado exclusivo.",
+            'cta-subtitle': "Únete a la lista de espera para recibir avisos cuando lancemos Planit.",
             'cta-button': "Unirme a la lista",
-            'privacy-policy': "Nunca compartiremos tu email con terceros.",
-            'terms-text': 'Acepto los <span class="modal-link" data-type="terms">Términos y Condiciones</span> y la <span class="modal-link" data-type="privacy">Política de Privacidad</span>',
-            'marketing-text': "Acepto recibir correos promocionales y ofertas de Planit.",
+            'privacy-policy': 'Tu correo se usa solo para gestionar la lista de espera. Los envíos se procesan mediante <a href="https://formspree.io" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand">Formspree</a>, nuestro proveedor de formularios. No vendemos tus datos. Consulta nuestra <span class="modal-link" data-type="privacy">Política de Privacidad</span>.',
+            'terms-text': 'Confirmo que tengo al menos 16 años y que he leído y acepto los <span class="modal-link" data-type="terms">Términos y Condiciones</span>, la <span class="modal-link" data-type="privacy">Política de Privacidad</span> y el <span class="modal-link" data-type="legal">Aviso Legal</span>.',
+            'marketing-text': 'Acepto recibir correos promocionales y ofertas de Planit (opcional). Puedo darme de baja en cualquier momento.',
+            'disclaimer-short': 'Planit está en desarrollo. Apuntarse a la lista no garantiza acceso, fecha de lanzamiento ni disponibilidad en tu región.',
+            'footer-terms': 'Términos',
+            'footer-privacy': 'Privacidad',
+            'footer-legal': 'Aviso Legal',
+            'footer-cookies': 'Cookies',
+            'footer-contact': 'Contacto',
+            'footer-disclaimer': 'Planit es un proyecto en desarrollo. Los contenidos de esta web son informativos y no constituyen contrato ni oferta.',
+            'footer-rights': 'Todos los derechos reservados.',
+            'cookie-text': 'Usamos almacenamiento esencial (idioma) y servicios de terceros (Formspree, fuentes). Consulta nuestra <span class="modal-link" data-type="cookies">Política de Cookies</span>.',
+            'cookie-reject': 'Rechazar no esenciales',
+            'cookie-accept': 'Aceptar',
             'features-title': "¿Qué puedes hacer con Planit?",
             'features-subtitle': "Todo lo que necesitas para convertir ideas en experiencias increíbles.",
-            'feature1-title': "Crear Planes",
-            'feature1-desc': "Crea eventos y planes con tus amigos en segundos.",
-            'feature2-title': "Votar Actividades",
-            'feature2-desc': "Deja que tus amigos voten qué hacer juntos.",
-            'feature3-title': "Dividir Costos",
-            'feature3-desc': "Divide fácilmente los costos entre los participantes sin confusión.",
+            'feature1-title': "Crear planes y subplanes",
+            'feature1-desc': "Organiza cada detalle, del evento principal a las tareas más pequeñas.",
+            'feature2-title': "Proponer y dividir costos",
+            'feature2-desc': "Sugiere actividades y gestiona los gastos de forma transparente y justa.",
+            'feature3-title': "Votar sobre todo",
+            'feature3-desc': "Deja que el grupo decida fechas, lugares y actividades de forma democrática.",
+            'feature4-title': "Notificaciones y recordatorios",
+            'feature4-desc': "Mantente al día de todas las actividades del plan y no pierdas ningún plazo.",
             'showcase-title': "¡Estamos construyendo algo increíble!",
             'showcase-desc': "Estamos trabajando para lanzar Planit muy pronto en iOS y Android. Echa un vistazo a lo que viene. El futuro de la planificación social está casi aquí."
         }
@@ -357,6 +391,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Rebind modal links
         bindModalLinks();
         if(languageSwitcher) languageSwitcher.value = lang;
+        const consentLangField = document.getElementById('consent-language-field');
+        if (consentLangField) consentLangField.value = lang;
     };
     if(languageSwitcher){
         languageSwitcher.addEventListener('change', e => setLanguage(e.target.value));
@@ -369,166 +405,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalContent = document.getElementById('modal-content');
     const modalClose = document.getElementById('modal-close');
 
-    const modalTexts = {
-    en: {
-        terms: {
-            title: "Terms & Conditions",
-            content: `
-<p>Welcome to <strong>Planit</strong>. By accessing or using our application, you agree to comply with and be bound by these Terms and Conditions.</p>
-<br>
-<p>1. <strong>Acceptance of Terms</strong><br>
-By using <strong>Planit</strong>, you agree to these terms. If you do not agree, please do not use the app.</p>
-<br>
-<p>2. <strong>Use of the App</strong><br>
-You agree to use <strong>Planit</strong> only for lawful purposes and in accordance with all applicable laws and regulations.</p>
-<br>
-<p>3. <strong>User Accounts</strong><br>
-You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account.</p>
-<br>
-<p>4. <strong>User Content</strong><br>
-You retain ownership of the content you upload or share. By submitting content, you grant <strong>Planit</strong> a non-exclusive license to use it for app functionality and promotion.</p>
-<br>
-<p>5. <strong>Prohibited Activities</strong><br>
-- Uploading malicious, harmful, or unlawful content.<br>
-- Harassing or harming other users.<br>
-- Attempting to gain unauthorized access to our systems.</p>
-<br>
-<p>6. <strong>Termination</strong><br>
-We may suspend or terminate your access if you violate these terms or at our discretion for any reason.</p>
-<br>
-<p>7. <strong>Limitation of Liability</strong><br>
-<strong>Planit</strong> is provided “as is.” We are not liable for any damages arising from the use or inability to use the app.</p>
-<br>
-<p>8. <strong>Modifications</strong><br>
-We reserve the right to modify these terms at any time. Continued use of the app constitutes acceptance of any changes.</p>
-<br>
-<p>9. <strong>Governing Law</strong><br>
-These terms are governed by the laws of your country of residence.</p>
-<br>
-<p>For questions, please contact us at <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
-`
-        },
-        privacy: {
-            title: "Privacy Policy",
-            content: `
-<p>At <strong>Planit</strong>, your privacy is important to us. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
-<br>
-<p>1. <strong>Information We Collect</strong><br>
-We may collect personal information such as your name, email address, account information, and content you upload.</p>
-<br>
-<p>2. <strong>Use of Information</strong><br>
-Your information is used to provide, maintain, and improve the app, communicate with you, and for promotional purposes if you consent.</p>
-<br>
-<p>3. <strong>Cookies and Tracking</strong><br>
-We may use cookies and similar technologies to improve your experience and gather analytics on app usage.</p>
-<br>
-<p>4. <strong>Third-Party Services</strong><br>
-We may share information with third-party service providers who help us operate the app. They are contractually obligated to keep your data secure.</p>
-<br>
-<p>5. <strong>Data Security</strong><br>
-We implement appropriate technical and organizational measures to protect your personal information.</p>
-<br>
-<p>6. <strong>Data Retention</strong><br>
-We will retain your personal data only as long as necessary to provide the services or as required by law.</p>
-<br>
-<p>7. <strong>Your Rights</strong><br>
-You can request access, correction, or deletion of your personal data by contacting us at <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
-<br>
-<p>8. <strong>Children’s Privacy</strong><br>
-Our app is not directed to individuals under 13. We do not knowingly collect personal data from children.</p>
-<br>
-<p>9. <strong>Changes to Privacy Policy</strong><br>
-We may update this Privacy Policy periodically. Continued use of the app constitutes acceptance of the updated policy.</p>
-`
-        }
-    },
-    es: {
-        terms: {
-            title: "Términos y Condiciones",
-            content: `
-<p>Bienvenido a <strong>Planit</strong>. Al acceder o usar nuestra aplicación, acepta cumplir y estar sujeto a estos Términos y Condiciones.</p>
-<br>
-<p>1. <strong>Aceptación de los Términos</strong><br>
-Al usar <strong>Planit</strong>, acepta estos términos. Si no está de acuerdo, por favor no use la aplicación.</p>
-<br>
-<p>2. <strong>Uso de la App</strong><br>
-Usted acepta usar <strong>Planit</strong> únicamente para fines legales y de acuerdo con todas las leyes y regulaciones aplicables.</p>
-<br>
-<p>3. <strong>Cuentas de Usuario</strong><br>
-Usted es responsable de mantener la confidencialidad de sus credenciales y de todas las actividades bajo su cuenta.</p>
-<br>
-<p>4. <strong>Contenido de Usuario</strong><br>
-Usted conserva la propiedad del contenido que cargue o comparta. Al enviar contenido, otorga a <strong>Planit</strong> una licencia no exclusiva para usarlo con fines de funcionalidad y promoción de la app.</p>
-<br>
-<p>5. <strong>Actividades Prohibidas</strong><br>
-- Cargar contenido malicioso, dañino o ilegal.<br>
-- Acosar o dañar a otros usuarios.<br>
-- Intentar obtener acceso no autorizado a nuestros sistemas.</p>
-<br>
-<p>6. <strong>Terminación</strong><br>
-Podemos suspender o terminar su acceso si viola estos términos o a nuestra discreción por cualquier motivo.</p>
-<br>
-<p>7. <strong>Limitación de Responsabilidad</strong><br>
-<strong>Planit</strong> se proporciona “tal cual”. No somos responsables de ningún daño que surja del uso o imposibilidad de usar la app.</p>
-<br>
-<p>8. <strong>Modificaciones</strong><br>
-Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de la app constituye aceptación de los cambios.</p>
-<br>
-<p>9. <strong>Ley Aplicable</strong><br>
-Estos términos se rigen por las leyes de su país de residencia.</p>
-<br>
-<p>Para cualquier pregunta, contáctenos en <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
-`
-        },
-        privacy: {
-            title: "Política de Privacidad",
-            content: `
-<p>En <strong>Planit</strong>, su privacidad es importante. Esta Política de Privacidad explica cómo recopilamos, usamos y protegemos su información personal.</p>
-<br>
-<p>1. <strong>Información que Recopilamos</strong><br>
-Podemos recopilar información personal como nombre, correo electrónico, información de la cuenta y contenido que cargue.</p>
-<br>
-<p>2. <strong>Uso de la Información</strong><br>
-Su información se utiliza para proporcionar, mantener y mejorar la app, comunicarnos con usted y, si da su consentimiento, para fines promocionales.</p>
-<br>
-<p>3. <strong>Cookies y Seguimiento</strong><br>
-Podemos usar cookies y tecnologías similares para mejorar su experiencia y recopilar análisis sobre el uso de la app.</p>
-<br>
-<p>4. <strong>Servicios de Terceros</strong><br>
-Podemos compartir información con proveedores de servicios de terceros que nos ayudan a operar la app. Están obligados contractualmente a mantener sus datos seguros.</p>
-<br>
-<p>5. <strong>Seguridad de los Datos</strong><br>
-Implementamos medidas técnicas y organizativas adecuadas para proteger su información personal.</p>
-<br>
-<p>6. <strong>Retención de Datos</strong><br>
-Conservaremos sus datos personales solo mientras sea necesario para proporcionar los servicios o según lo exija la ley.</p>
-<br>
-<p>7. <strong>Derechos del Usuario</strong><br>
-Puede solicitar acceso, corrección o eliminación de sus datos personales contactándonos en <a href="mailto:aplicacionplanit@gmail.com">aplicacionplanit@gmail.com</a>.</p>
-<br>
-<p>8. <strong>Privacidad de los Niños</strong><br>
-Nuestra app no está dirigida a menores de 13 años. No recopilamos intencionalmente datos personales de niños.</p>
-<br>
-<p>9. <strong>Cambios en la Política de Privacidad</strong><br>
-Podemos actualizar esta Política de Privacidad periódicamente. El uso continuado de la app constituye aceptación de la política actualizada.</p>
-`
-        }
+    function openLegalModal(type) {
+        const doc = typeof LEGAL_TEXTS !== 'undefined' ? LEGAL_TEXTS[currentLang][type] : null;
+        if (!doc) return;
+        modalTitle.textContent = doc.title;
+        modalContent.innerHTML = doc.content;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        bindModalLinks();
     }
-};
 
-    function bindModalLinks(){
+    function bindModalLinks() {
+        document.querySelectorAll('.modal-link').forEach(link => {
+            link.replaceWith(link.cloneNode(true));
+        });
         document.querySelectorAll('.modal-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const type = link.getAttribute('data-type');
-                modalTitle.textContent = modalTexts[currentLang][type].title;
-                modalContent.innerHTML = modalTexts[currentLang][type].content;
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
+                openLegalModal(link.getAttribute('data-type'));
             });
         });
     }
     bindModalLinks();
+
+    // --- WAITLIST FORM: consent audit trail ---
+    const waitlistForm = document.getElementById('waitlist-form');
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', () => {
+            const termsChecked = document.getElementById('terms').checked;
+            document.getElementById('privacy-accepted-field').value = termsChecked ? 'yes' : 'no';
+            document.getElementById('marketing-consent-field').value = document.getElementById('marketing').checked ? 'yes' : 'no';
+            document.getElementById('consent-language-field').value = currentLang;
+            let tsField = waitlistForm.querySelector('input[name="consent_timestamp"]');
+            if (!tsField) {
+                tsField = document.createElement('input');
+                tsField.type = 'hidden';
+                tsField.name = 'consent_timestamp';
+                waitlistForm.appendChild(tsField);
+            }
+            tsField.value = new Date().toISOString();
+        });
+    }
+
+    // --- COOKIE CONSENT ---
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieAccept = document.getElementById('cookie-accept');
+    const cookieReject = document.getElementById('cookie-reject');
+    const COOKIE_CONSENT_KEY = 'planit-cookie-consent';
+
+    function hideCookieBanner() {
+        if (cookieBanner) cookieBanner.classList.add('hidden');
+    }
+
+    function showCookieBanner() {
+        if (cookieBanner) cookieBanner.classList.remove('hidden');
+    }
+
+    if (!localStorage.getItem(COOKIE_CONSENT_KEY)) {
+        showCookieBanner();
+    }
+
+    if (cookieAccept) {
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+            hideCookieBanner();
+        });
+    }
+    if (cookieReject) {
+        cookieReject.addEventListener('click', () => {
+            localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
+            hideCookieBanner();
+        });
+    }
 
     modalClose.addEventListener('click', () => { modal.classList.add('hidden'); modal.classList.remove('flex'); });
     modal.addEventListener('click', (e) => { if(e.target === modal){ modal.classList.add('hidden'); modal.classList.remove('flex'); } });
